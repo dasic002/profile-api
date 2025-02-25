@@ -29,11 +29,11 @@ class ProfileDetail(APIView):
             raise Http404
     
     def get(self, request, pk):
-         profile = self.get_object(pk)
-         serializer = ProfileSerializer(
+        profile = self.get_object(pk)
+        serializer = ProfileSerializer(
             profile, context={'request': request}
         )
-         return Response(serializer.data)
+        return Response(serializer.data)
     
     def put(self, request, pk):
         profile = self.get_object(pk)
